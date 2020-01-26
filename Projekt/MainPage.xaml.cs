@@ -1,8 +1,13 @@
-﻿using System;
+﻿using CurrencyNamespace;
+using HttpGetNameSpace;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using UtilitiesNamespace;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +27,20 @@ namespace Projekt
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        HttpGet http;
         public MainPage()
         {
             this.InitializeComponent();
+            http = new HttpGet();
+            start();
+        }
+
+        public async void start()
+        {
+            string httpGetResult = await http.httpGet(HttpGet.averageExchangeRate);
+            Debug.WriteLine(httpGetResult);
+            dynamic currencyData = Utilities.parseCurrencyData(httpGetResult);
+
         }
     }
 }
