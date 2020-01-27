@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-01-26T14:16:35.992</Modified>
+      <Modified>2020-01-26T17:19:40.383</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\Projekt.exe">
       <PackagePath>entrypoint\Projekt.exe</PackagePath>
-      <Modified>2020-01-26T14:16:35.462</Modified>
+      <Modified>2020-01-26T17:19:39.834</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -558,19 +558,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\Projekt.xr.xml">
       <PackagePath>Projekt.xr.xml</PackagePath>
-      <Modified>2020-01-19T17:36:47.236</Modified>
+      <Modified>2020-01-26T17:15:17.903</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-01-26T14:16:35.260</Modified>
+      <Modified>2020-01-26T16:22:10.025</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\BlankPage1.xbf">
       <PackagePath>BlankPage1.xbf</PackagePath>
-      <Modified>2020-01-26T14:16:35.260</Modified>
+      <Modified>2020-01-26T16:22:10.025</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-01-26T14:16:35.261</Modified>
+      <Modified>2020-01-26T17:19:39.627</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -578,11 +578,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-01-19T20:40:59.150</Modified>
+      <Modified>2020-01-26T15:08:26.644</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\Core\Projekt.exe">
       <PackagePath>Projekt.exe</PackagePath>
-      <Modified>2020-01-26T14:16:35.982</Modified>
+      <Modified>2020-01-26T17:19:40.372</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

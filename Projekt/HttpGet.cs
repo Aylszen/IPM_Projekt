@@ -12,7 +12,7 @@ namespace HttpGetNameSpace
 {
 
     class HttpGet
-    {
+    {   
         private String mainApi = "http://api.nbp.pl/api/";
         static public String averageExchangeRate = "exchangerates/tables/a/";
         public async Task<dynamic> httpGet(String address)

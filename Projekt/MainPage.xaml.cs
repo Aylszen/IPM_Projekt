@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using CurrencyNamespace;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -32,15 +33,17 @@ namespace Projekt
         {
             this.InitializeComponent();
             http = new HttpGet();
+            this.currencyViewModel = new CurrencyViewModel();
             start();
         }
-
+        public CurrencyViewModel currencyViewModel { get; set; }
         public async void start()
         {
             string httpGetResult = await http.httpGet(HttpGet.averageExchangeRate);
             Debug.WriteLine(httpGetResult);
-            dynamic currencyData = Utilities.parseCurrencyData(httpGetResult);
-
+            dynamic CurrencyData = Utilities.parseCurrencyData(httpGetResult);
+            currencyViewModel.addCurrencies(CurrencyData);
+            
         }
     }
 }
