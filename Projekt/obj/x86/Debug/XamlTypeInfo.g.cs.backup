@@ -194,7 +194,7 @@ namespace Projekt.Projekt_XamlTypeInfo
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Projekt.MainPage";
-            _typeNameTable[4] = "CurrencyViewModelNamespace.CurrencyViewModel";
+            _typeNameTable[4] = "CurrencyNamespace.CurrencyViewModel";
             _typeNameTable[5] = "Object";
 
             _typeTable = new global::System.Type[6];
@@ -202,7 +202,7 @@ namespace Projekt.Projekt_XamlTypeInfo
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Projekt.MainPage);
-            _typeTable[4] = typeof(global::CurrencyViewModelNamespace.CurrencyViewModel);
+            _typeTable[4] = typeof(global::CurrencyNamespace.CurrencyViewModel);
             _typeTable[5] = typeof(global::System.Object);
         }
 
@@ -240,7 +240,7 @@ namespace Projekt.Projekt_XamlTypeInfo
 
         private object Activate_0_BlankPage1() { return new global::Projekt.BlankPage1(); }
         private object Activate_3_MainPage() { return new global::Projekt.MainPage(); }
-        private object Activate_4_CurrencyViewModel() { return new global::CurrencyViewModelNamespace.CurrencyViewModel(); }
+        private object Activate_4_CurrencyViewModel() { return new global::CurrencyNamespace.CurrencyViewModel(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -275,7 +275,7 @@ namespace Projekt.Projekt_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 4:   //  CurrencyViewModelNamespace.CurrencyViewModel
+            case 4:   //  CurrencyNamespace.CurrencyViewModel
                 userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
@@ -298,7 +298,7 @@ namespace Projekt.Projekt_XamlTypeInfo
         private void set_0_MainPage_currencyViewModel(object instance, object Value)
         {
             var that = (global::Projekt.MainPage)instance;
-            that.currencyViewModel = (global::CurrencyViewModelNamespace.CurrencyViewModel)Value;
+            that.currencyViewModel = (global::CurrencyNamespace.CurrencyViewModel)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -310,7 +310,7 @@ namespace Projekt.Projekt_XamlTypeInfo
             {
             case "Projekt.MainPage.currencyViewModel":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Projekt.MainPage");
-                xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "currencyViewModel", "CurrencyViewModelNamespace.CurrencyViewModel");
+                xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "currencyViewModel", "CurrencyNamespace.CurrencyViewModel");
                 xamlMember.Getter = get_0_MainPage_currencyViewModel;
                 xamlMember.Setter = set_0_MainPage_currencyViewModel;
                 break;

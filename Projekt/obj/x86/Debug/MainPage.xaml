@@ -18,8 +18,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:Name="DoubleLineDataTemplate"                            >
                     <StackPanel x:ConnectionId='4' Orientation="Horizontal" Height="64"                                          >
-                        <Grid
-                            Padding="20">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
