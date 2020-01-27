@@ -122,6 +122,7 @@
     <Compile Include="BlankPage1.xaml.cs">
       <DependentUpon>BlankPage1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DateViewModel.cs" />
     <Compile Include="CurrencyViewModel.cs" />
     <Compile Include="Currency.cs" />
     <Compile Include="Utilities.cs" />

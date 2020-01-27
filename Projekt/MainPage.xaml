@@ -9,14 +9,22 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid
-        x:Name="stack_panel1" 
-        Margin="512,50,50,50" 
+        x:Name="grid_panel_main_page" 
+        Margin="50,50,50,50" 
         Background="AliceBlue"
         Padding="20"
         >
-        <ListView ItemsSource="{x:Bind currencyViewModel.Currencies}" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DatePicker Grid.Column ="0" Grid.Row="0" x:Name="currencyDatePicker" Header="Pick your date" Date="{x:Bind dateViewModel.DateTime, Mode=TwoWay}"/>
+        <ListView Grid.Column ="1" Grid.Row="0" ItemsSource="{x:Bind currencyViewModel.Currencies}">
             <ListView.ItemTemplate>
-                <DataTemplate x:Name="DoubleLineDataTemplate" x:DataType="local:Currency">
+                <DataTemplate x:Name="CurrencyDataTemplate" x:DataType="local:Currency" >
                     <StackPanel Orientation="Horizontal" Height="64" AutomationProperties.Name="{x:Bind Name}">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -37,5 +45,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <StackPanel/>
+        <StackPanel/>
     </Grid>
 </Page>

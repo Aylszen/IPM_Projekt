@@ -189,21 +189,23 @@ namespace Projekt.Projekt_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
+            _typeNameTable = new string[7];
             _typeNameTable[0] = "Projekt.BlankPage1";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Projekt.MainPage";
-            _typeNameTable[4] = "CurrencyViewModelNamespace.CurrencyViewModel";
+            _typeNameTable[4] = "DateViewModelNamespace.DateViewModel";
             _typeNameTable[5] = "Object";
+            _typeNameTable[6] = "CurrencyViewModelNamespace.CurrencyViewModel";
 
-            _typeTable = new global::System.Type[6];
+            _typeTable = new global::System.Type[7];
             _typeTable[0] = typeof(global::Projekt.BlankPage1);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Projekt.MainPage);
-            _typeTable[4] = typeof(global::CurrencyViewModelNamespace.CurrencyViewModel);
+            _typeTable[4] = typeof(global::DateViewModelNamespace.DateViewModel);
             _typeTable[5] = typeof(global::System.Object);
+            _typeTable[6] = typeof(global::CurrencyViewModelNamespace.CurrencyViewModel);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -240,7 +242,8 @@ namespace Projekt.Projekt_XamlTypeInfo
 
         private object Activate_0_BlankPage1() { return new global::Projekt.BlankPage1(); }
         private object Activate_3_MainPage() { return new global::Projekt.MainPage(); }
-        private object Activate_4_CurrencyViewModel() { return new global::CurrencyViewModelNamespace.CurrencyViewModel(); }
+        private object Activate_4_DateViewModel() { return new global::DateViewModelNamespace.DateViewModel(); }
+        private object Activate_6_CurrencyViewModel() { return new global::CurrencyViewModelNamespace.CurrencyViewModel(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -270,12 +273,13 @@ namespace Projekt.Projekt_XamlTypeInfo
             case 3:   //  Projekt.MainPage
                 userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_3_MainPage;
+                userType.AddMemberName("dateViewModel");
                 userType.AddMemberName("currencyViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  CurrencyViewModelNamespace.CurrencyViewModel
+            case 4:   //  DateViewModelNamespace.DateViewModel
                 userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
@@ -285,17 +289,34 @@ namespace Projekt.Projekt_XamlTypeInfo
             case 5:   //  Object
                 xamlType = new global::Projekt.Projekt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
+
+            case 6:   //  CurrencyViewModelNamespace.CurrencyViewModel
+                userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
             }
             return xamlType;
         }
 
 
-        private object get_0_MainPage_currencyViewModel(object instance)
+        private object get_0_MainPage_dateViewModel(object instance)
+        {
+            var that = (global::Projekt.MainPage)instance;
+            return that.dateViewModel;
+        }
+        private void set_0_MainPage_dateViewModel(object instance, object Value)
+        {
+            var that = (global::Projekt.MainPage)instance;
+            that.dateViewModel = (global::DateViewModelNamespace.DateViewModel)Value;
+        }
+        private object get_1_MainPage_currencyViewModel(object instance)
         {
             var that = (global::Projekt.MainPage)instance;
             return that.currencyViewModel;
         }
-        private void set_0_MainPage_currencyViewModel(object instance, object Value)
+        private void set_1_MainPage_currencyViewModel(object instance, object Value)
         {
             var that = (global::Projekt.MainPage)instance;
             that.currencyViewModel = (global::CurrencyViewModelNamespace.CurrencyViewModel)Value;
@@ -308,11 +329,17 @@ namespace Projekt.Projekt_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "Projekt.MainPage.dateViewModel":
+                userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Projekt.MainPage");
+                xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "dateViewModel", "DateViewModelNamespace.DateViewModel");
+                xamlMember.Getter = get_0_MainPage_dateViewModel;
+                xamlMember.Setter = set_0_MainPage_dateViewModel;
+                break;
             case "Projekt.MainPage.currencyViewModel":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Projekt.MainPage");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "currencyViewModel", "CurrencyViewModelNamespace.CurrencyViewModel");
-                xamlMember.Getter = get_0_MainPage_currencyViewModel;
-                xamlMember.Setter = set_0_MainPage_currencyViewModel;
+                xamlMember.Getter = get_1_MainPage_currencyViewModel;
+                xamlMember.Setter = set_1_MainPage_currencyViewModel;
                 break;
             }
             return xamlMember;

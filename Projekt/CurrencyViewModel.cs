@@ -28,7 +28,7 @@ namespace CurrencyViewModelNamespace
                 string currencyPrice = CurrencyDataElement.mid;
                 string tempCurrencyCode = CurrencyDataElement.code;
                 string currencyCode = tempCurrencyCode.Remove(tempCurrencyCode.Length - 1);
-                this.currencies.Add(new Currency() { Name = currencyName, ShortName = currencyShortName, Price = currencyPrice, CountryImage = Currency.imagePathFirst + currencyCode.ToLower() + Currency.imagePathSecond });
+                this.currencies.Add(new Currency() { Name = currencyName, ShortName = currencyShortName, Price = currencyPrice, CountryImage = Currency.imagePathFirst + currencyCode.ToLower() + Currency.imagePathSecond});
             }
         }
     }

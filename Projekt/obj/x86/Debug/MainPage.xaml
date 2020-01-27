@@ -9,15 +9,23 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid x:ConnectionId='2'
-        x:Name="stack_panel1" 
-        Margin="512,50,50,50" 
+        x:Name="grid_panel_main_page" 
+        Margin="50,50,50,50" 
         Background="AliceBlue"
         Padding="20"
         >
-        <ListView x:ConnectionId='3'                                                     >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DatePicker x:ConnectionId='3' Grid.Column ="0" Grid.Row="0" x:Name="currencyDatePicker" Header="Pick your date"                                                    />
+        <ListView x:ConnectionId='4' Grid.Column ="1" Grid.Row="0"                                                    >
             <ListView.ItemTemplate>
-                <DataTemplate x:Name="DoubleLineDataTemplate"                            >
-                    <StackPanel x:ConnectionId='4' Orientation="Horizontal" Height="64"                                          >
+                <DataTemplate x:Name="CurrencyDataTemplate"                             >
+                    <StackPanel x:ConnectionId='5' Orientation="Horizontal" Height="64"                                          >
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -28,15 +36,17 @@
                                 <RowDefinition Height="*"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image x:ConnectionId='5' Grid.Column="0" Grid.RowSpan="3"                               ></Image>
-                            <TextBlock x:ConnectionId='6' Grid.Column="1" Grid.Row="0"                       Style="{ThemeResource BaseTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" />
-                            <TextBlock x:ConnectionId='7' Grid.Column="1" Grid.Row="1"                           Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
-                            <TextBlock x:ConnectionId='8' Grid.Column="1" Grid.Row="2"                       Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                            <Image x:ConnectionId='6' Grid.Column="0" Grid.RowSpan="3"                               ></Image>
+                            <TextBlock x:ConnectionId='7' Grid.Column="1" Grid.Row="0"                       Style="{ThemeResource BaseTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" />
+                            <TextBlock x:ConnectionId='8' Grid.Column="1" Grid.Row="1"                           Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                            <TextBlock x:ConnectionId='9' Grid.Column="1" Grid.Row="2"                       Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
                         </Grid>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <StackPanel/>
+        <StackPanel/>
     </Grid>
 </Page>
 
