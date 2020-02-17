@@ -37,8 +37,8 @@ namespace Projekt
         {
             this.InitializeComponent();
             http = new HttpGet();
-            this.dateViewModel = new DateViewModel();
             this.currencyViewModel = new CurrencyViewModel();
+            this.dateViewModel = new DateViewModel(currencyViewModel);
             start();
         }
         public DateViewModel dateViewModel { get; set; }

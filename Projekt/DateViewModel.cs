@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CurrencyViewModelNamespace;
+using HttpGetNameSpace;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -6,6 +8,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using UtilitiesNamespace;
 
 namespace DateViewModelNamespace
 {
@@ -15,9 +18,10 @@ namespace DateViewModelNamespace
         private Windows.Storage.ApplicationDataCompositeValue composite;
         private const string CONTAINER_NAME = "currentDateSetting";
         private const string CONTAINER_DATETIME_FIELD = "dateTime";
-
+        private CurrencyViewModel currencyViewModel;
         private DateTimeOffset dateTime;
         public String normalDate;
+        HttpGet http;
         public DateTimeOffset DateTime
         {
             get => dateTime;
@@ -27,12 +31,17 @@ namespace DateViewModelNamespace
                 StoreData();
                 Debug.WriteLine("Date time: " + dateTime);
                 normalDate = parseDateTimeOffset();
+                //
+                start();
+                //
                 this.OnPropertyChanged();
             }
         }
 
-        public DateViewModel()
+        public DateViewModel(CurrencyViewModelNamespace.CurrencyViewModel currencyViewModel)
         {
+            this.http = new HttpGet();
+            this.currencyViewModel = currencyViewModel;
             localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             composite = (Windows.Storage.ApplicationDataCompositeValue)localSettings.Values[CONTAINER_NAME];
             if (composite == null)
@@ -46,6 +55,13 @@ namespace DateViewModelNamespace
             }
         }
 
+        public async void start()
+        {
+            string httpGetResult = await http.httpGet(HttpGet.averageExchangeRate + normalDate + "/" + normalDate + "/");
+            Debug.WriteLine(httpGetResult);
+            dynamic CurrencyData = Utilities.parseCurrencyData(httpGetResult);
+            currencyViewModel.addCurrencies(CurrencyData);
+        }
         public String parseDateTimeOffset()
         {
             String newDateTime = dateTime.Date.ToString();

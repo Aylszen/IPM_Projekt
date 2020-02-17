@@ -242,7 +242,6 @@ namespace Projekt.Projekt_XamlTypeInfo
 
         private object Activate_0_BlankPage1() { return new global::Projekt.BlankPage1(); }
         private object Activate_3_MainPage() { return new global::Projekt.MainPage(); }
-        private object Activate_4_DateViewModel() { return new global::DateViewModelNamespace.DateViewModel(); }
         private object Activate_6_CurrencyViewModel() { return new global::CurrencyViewModelNamespace.CurrencyViewModel(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
