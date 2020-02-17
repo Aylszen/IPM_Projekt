@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using UtilitiesNamespace;
+using Windows.UI.Xaml.Controls;
 
 namespace DateViewModelNamespace
 {
@@ -22,25 +23,40 @@ namespace DateViewModelNamespace
         private DateTimeOffset dateTime;
         public String normalDate;
         HttpGet http;
+        private DatePicker currencyDatePicker;
         public DateTimeOffset DateTime
         {
             get => dateTime;
             set
             {
+                DateTimeOffset previousDate = this.dateTime; 
                 this.dateTime = value.Date;
-                StoreData();
                 Debug.WriteLine("Date time: " + dateTime);
                 normalDate = parseDateTimeOffset();
                 //
-                start();
+                start(previousDate);
+                StoreData();
                 //
                 this.OnPropertyChanged();
             }
         }
 
-        public DateViewModel(CurrencyViewModelNamespace.CurrencyViewModel currencyViewModel)
+        private async void DisplayNoDataForThisDataAvailable()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "No data",
+                Content = "No data available for this date",
+                CloseButtonText = "Ok"
+            };
+
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
+        }
+
+        public DateViewModel(CurrencyViewModelNamespace.CurrencyViewModel currencyViewModel, DatePicker currencyDatePicker)
         {
             this.http = new HttpGet();
+            this.currencyDatePicker = currencyDatePicker;
             this.currencyViewModel = currencyViewModel;
             localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             composite = (Windows.Storage.ApplicationDataCompositeValue)localSettings.Values[CONTAINER_NAME];
@@ -55,12 +71,21 @@ namespace DateViewModelNamespace
             }
         }
 
-        public async void start()
+        public async void start(DateTimeOffset previousDate)
         {
             string httpGetResult = await http.httpGet(HttpGet.averageExchangeRate + normalDate + "/" + normalDate + "/");
             Debug.WriteLine("HttpGet result:" + httpGetResult);
-            dynamic CurrencyData = Utilities.parseCurrencyData(httpGetResult);
-            currencyViewModel.addCurrencies(CurrencyData);
+            if (httpGetResult == null)
+            {
+                DisplayNoDataForThisDataAvailable();
+                Debug.WriteLine("Prev date:" + previousDate);
+                this.dateTime = previousDate;
+            }
+            else
+            {
+                dynamic CurrencyData = Utilities.parseCurrencyData(httpGetResult);
+                currencyViewModel.addCurrencies(CurrencyData);
+            }
         }
         public String parseDateTimeOffset()
         {
