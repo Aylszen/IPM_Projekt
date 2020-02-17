@@ -11,7 +11,7 @@ namespace UtilitiesNamespace
 {
     class Utilities
     {
-        public static dynamic parseCurrencyData(dynamic currencyData)
+        public static dynamic parseCurrencyData(string currencyData)
         {
             dynamic obj = JsonConvert.DeserializeObject<dynamic>(currencyData)[0];
             return obj;

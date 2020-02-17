@@ -21,6 +21,7 @@ namespace CurrencyViewModelNamespace
 
         public void addCurrencies(dynamic CurrencyData)
         {
+            this.currencies.Clear();
             foreach (dynamic CurrencyDataElement in CurrencyData.rates)
             {
                 string currencyName = CurrencyDataElement.currency;

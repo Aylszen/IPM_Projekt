@@ -58,7 +58,7 @@ namespace DateViewModelNamespace
         public async void start()
         {
             string httpGetResult = await http.httpGet(HttpGet.averageExchangeRate + normalDate + "/" + normalDate + "/");
-            Debug.WriteLine(httpGetResult);
+            Debug.WriteLine("HttpGet result:" + httpGetResult);
             dynamic CurrencyData = Utilities.parseCurrencyData(httpGetResult);
             currencyViewModel.addCurrencies(CurrencyData);
         }
@@ -83,7 +83,7 @@ namespace DateViewModelNamespace
             {
                 newMonth = "0" + newMonth;
             }
-            finalDate = newDay + "-" + newMonth +"-" + newYear;
+            finalDate = newYear + "-" + newMonth + "-" + newDay;
             Debug.WriteLine("Parsed Date: " + finalDate);
             return finalDate;
         }
@@ -98,7 +98,6 @@ namespace DateViewModelNamespace
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             // Raise the PropertyChanged event, passing the name of the property whose value has changed.
-            Debug.WriteLine("Weszlo");
             this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }

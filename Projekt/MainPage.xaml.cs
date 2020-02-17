@@ -46,7 +46,7 @@ namespace Projekt
         public async void start()
         {
             string httpGetResult = await http.httpGet(HttpGet.averageExchangeRate + dateViewModel.normalDate + "/" + dateViewModel.normalDate + "/" );
-            Debug.WriteLine(httpGetResult);
+            Debug.WriteLine("HttpGet result:" + httpGetResult);
             dynamic CurrencyData = Utilities.parseCurrencyData(httpGetResult);
             currencyViewModel.addCurrencies(CurrencyData);
         }

@@ -25,6 +25,7 @@ namespace HttpGetNameSpace
             dynamic httpResponseBody = "";
             try
             {
+                Debug.WriteLine("HttpGet attempt for: " + uri.ToString());
                 //Send the GET request
                 httpResponse = await httpClient.GetAsync(uri);
                 httpResponse.EnsureSuccessStatusCode();
@@ -35,6 +36,7 @@ namespace HttpGetNameSpace
             {
                 httpResponseBody = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
             }
+            Debug.WriteLine("HttpGet null");
             return null;
         }
 
