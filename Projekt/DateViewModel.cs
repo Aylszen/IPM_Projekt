@@ -23,7 +23,6 @@ namespace DateViewModelNamespace
         private DateTimeOffset dateTime;
         public String normalDate;
         HttpGet http;
-        private DatePicker currencyDatePicker;
         public DateTimeOffset DateTime
         {
             get => dateTime;
@@ -53,10 +52,9 @@ namespace DateViewModelNamespace
             ContentDialogResult result = await noWifiDialog.ShowAsync();
         }
 
-        public DateViewModel(CurrencyViewModelNamespace.CurrencyViewModel currencyViewModel, DatePicker currencyDatePicker)
+        public DateViewModel(CurrencyViewModelNamespace.CurrencyViewModel currencyViewModel)
         {
             this.http = new HttpGet();
-            this.currencyDatePicker = currencyDatePicker;
             this.currencyViewModel = currencyViewModel;
             localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             composite = (Windows.Storage.ApplicationDataCompositeValue)localSettings.Values[CONTAINER_NAME];

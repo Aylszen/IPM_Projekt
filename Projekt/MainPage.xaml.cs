@@ -38,9 +38,9 @@ namespace Projekt
             this.InitializeComponent();
             http = new HttpGet();
             this.currencyViewModel = new CurrencyViewModel();
-            this.dateViewModel = new DateViewModel(currencyViewModel, currencyDatePicker);
-            currencyDatePicker.MinYear = new DateTime(2002, 1, 2);
-            currencyDatePicker.MaxYear = new DateTime(2020, 12, 12);
+            this.dateViewModel = new DateViewModel(currencyViewModel);
+            currencyDatePicker.MinDate = new DateTime(2002, 1, 2);
+            currencyDatePicker.MaxDate = new DateTime(2020, 12, 12);
             start();
         }
         public DateViewModel dateViewModel { get; set; }

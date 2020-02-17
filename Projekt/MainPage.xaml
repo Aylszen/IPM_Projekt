@@ -10,19 +10,19 @@
 
     <Grid
         x:Name="grid_panel_main_page" 
-        Margin="50,50,50,50" 
+        Margin="5,5,5,5" 
         Background="AliceBlue"
-        Padding="20"
+        Padding="5"
         >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <DatePicker Grid.Column ="0" Grid.Row="0" x:Name="currencyDatePicker" Header="Pick your date" Date="{x:Bind dateViewModel.DateTime, Mode=TwoWay}"/>
-        <ListView Grid.Column ="1" Grid.Row="0" ItemsSource="{x:Bind currencyViewModel.Currencies}">
+        <CalendarDatePicker Grid.Column ="0" Grid.Row="0" x:Name="currencyDatePicker" Header="Pick your date" Date="{x:Bind dateViewModel.DateTime, Mode=TwoWay}"/>
+        <ListView Grid.Column ="0" Grid.Row="1" ItemsSource="{x:Bind currencyViewModel.Currencies}">
             <ListView.ItemTemplate>
                 <DataTemplate x:Name="CurrencyDataTemplate" x:DataType="local:Currency" >
                     <StackPanel Orientation="Horizontal" Height="64" AutomationProperties.Name="{x:Bind Name}">
