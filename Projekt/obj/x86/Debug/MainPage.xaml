@@ -22,7 +22,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <CalendarDatePicker x:ConnectionId='3' Grid.Column ="0" Grid.Row="0" x:Name="currencyDatePicker" Header="Pick your date"                                                    />
-        <ListView x:ConnectionId='4' Grid.Column ="0" Grid.Row="1"                                                    >
+        <ListView x:ConnectionId='4' Grid.Column ="0" Grid.Row="1"                                                     IsItemClickEnabled="True"                                        >
             <ListView.ItemTemplate>
                 <DataTemplate x:Name="CurrencyDataTemplate"                             >
                     <StackPanel x:ConnectionId='5' Orientation="Horizontal" Height="64"                                          >

@@ -1,10 +1,13 @@
 ﻿using CurrencyNamespace;
+using Projekt;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace CurrencyViewModelNamespace
 {
@@ -31,6 +34,12 @@ namespace CurrencyViewModelNamespace
                 string currencyCode = tempCurrencyCode.Remove(tempCurrencyCode.Length - 1);
                 this.currencies.Add(new Currency() { Name = currencyName, ShortName = currencyShortName, Price = currencyPrice, CountryImage = Currency.imagePathFirst + currencyCode.ToLower() + Currency.imagePathSecond});
             }
+        }
+
+        public void ClickItemList(object sender, ItemClickEventArgs e)
+        {
+            
+            //bool v = Frame.Navigate(typeof(History), null);
         }
     }
 }

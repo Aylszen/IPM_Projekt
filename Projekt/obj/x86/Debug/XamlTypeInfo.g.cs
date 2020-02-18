@@ -190,7 +190,7 @@ namespace Projekt.Projekt_XamlTypeInfo
         private void InitTypeTables()
         {
             _typeNameTable = new string[7];
-            _typeNameTable[0] = "Projekt.BlankPage1";
+            _typeNameTable[0] = "Projekt.History";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Projekt.MainPage";
@@ -199,7 +199,7 @@ namespace Projekt.Projekt_XamlTypeInfo
             _typeNameTable[6] = "CurrencyViewModelNamespace.CurrencyViewModel";
 
             _typeTable = new global::System.Type[7];
-            _typeTable[0] = typeof(global::Projekt.BlankPage1);
+            _typeTable[0] = typeof(global::Projekt.History);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Projekt.MainPage);
@@ -240,7 +240,7 @@ namespace Projekt.Projekt_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_BlankPage1() { return new global::Projekt.BlankPage1(); }
+        private object Activate_0_History() { return new global::Projekt.History(); }
         private object Activate_3_MainPage() { return new global::Projekt.MainPage(); }
         private object Activate_6_CurrencyViewModel() { return new global::CurrencyViewModelNamespace.CurrencyViewModel(); }
 
@@ -254,9 +254,9 @@ namespace Projekt.Projekt_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Projekt.BlankPage1
+            case 0:   //  Projekt.History
                 userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_BlankPage1;
+                userType.Activator = Activate_0_History;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

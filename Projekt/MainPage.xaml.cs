@@ -52,5 +52,12 @@ namespace Projekt
             dynamic CurrencyData = Utilities.parseCurrencyData(httpGetResult);
             currencyViewModel.addCurrencies(CurrencyData);
         }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var clickedItem = e.ClickedItem;
+            Debug.WriteLine("On click: " + clickedItem.ToString());
+            Frame.Navigate(typeof(History), null);
+        }
     }
 }

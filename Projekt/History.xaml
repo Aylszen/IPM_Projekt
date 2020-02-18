@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Projekt.BlankPage1"
+    x:Class="Projekt.History"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Projekt"
@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Button Content="Go Back" Margin="0,114,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click"/>
 
     </Grid>
 </Page>
-

@@ -22,7 +22,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <CalendarDatePicker Grid.Column ="0" Grid.Row="0" x:Name="currencyDatePicker" Header="Pick your date" Date="{x:Bind dateViewModel.DateTime, Mode=TwoWay}"/>
-        <ListView Grid.Column ="0" Grid.Row="1" ItemsSource="{x:Bind currencyViewModel.Currencies}">
+        <ListView Grid.Column ="0" Grid.Row="1" ItemsSource="{x:Bind currencyViewModel.Currencies}" IsItemClickEnabled="True" ItemClick="{x:Bind ListView_ItemClick}">
             <ListView.ItemTemplate>
                 <DataTemplate x:Name="CurrencyDataTemplate" x:DataType="local:Currency" >
                     <StackPanel Orientation="Horizontal" Height="64" AutomationProperties.Name="{x:Bind Name}">

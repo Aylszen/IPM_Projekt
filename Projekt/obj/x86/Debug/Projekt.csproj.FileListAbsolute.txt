@@ -1,5 +1,4 @@
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\App.xbf
-C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\BlankPage1.xbf
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\MainPage.xbf
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\Projekt.xr.xml
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\Projekt.exe
@@ -126,16 +125,12 @@ C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\System.Xml.XmlSerializer
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\Projekt.csprojAssemblyReference.cache
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\App.g.i.cs
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\App.g.cs
-C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\BlankPage1.g.i.cs
-C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\BlankPage1.g.cs
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\MainPage.g.i.cs
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\MainPage.g.cs
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\XamlTypeInfo.g.cs
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\App.xaml
-C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\BlankPage1.xaml
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\MainPage.xaml
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\App.xbf
-C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\BlankPage1.xbf
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\MainPage.xbf
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\Projekt.csproj.CopyComplete
@@ -231,3 +226,8 @@ C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\FxResources.System.Compo
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\FxResources.System.ComponentModel.TypeConverter.SR.resw
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\FxResources.System.Runtime.InteropServices.RuntimeInformation.SR.resw
 C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\FxResources.System.Runtime.Serialization.Formatters.SR.resw
+C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\History.g.i.cs
+C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\History.g.cs
+C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\History.xaml
+C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\obj\x86\Debug\History.xbf
+C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\History.xbf
