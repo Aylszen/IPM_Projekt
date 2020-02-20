@@ -7,8 +7,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.TopAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:ConnectionId='2' Icon="Home" Label="Exit"                                ></AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.TopAppBar>
 
-    <Grid x:ConnectionId='2'
+    <Grid x:ConnectionId='3'
         x:Name="grid_panel_main_page" 
         Margin="5,5,5,5" 
         Background="AliceBlue"
@@ -21,11 +29,11 @@
             <RowDefinition Height="70"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <CalendarDatePicker x:ConnectionId='3' Grid.Column ="0" Grid.Row="0" x:Name="currencyDatePicker" Header="Pick your date"                                                    />
-        <ListView x:ConnectionId='4' Grid.Column ="0" Grid.Row="1"                                                     IsItemClickEnabled="True"                                        >
+        <CalendarDatePicker x:ConnectionId='4' Grid.Column ="0" Grid.Row="0" x:Name="currencyDatePicker" Header="Pick your date"                                                    />
+        <ListView x:ConnectionId='5' Grid.Column ="0" Grid.Row="1"                                                     IsItemClickEnabled="True"                                        >
             <ListView.ItemTemplate>
                 <DataTemplate x:Name="CurrencyDataTemplate"                             >
-                    <StackPanel x:ConnectionId='5' Orientation="Horizontal" Height="64"                                          >
+                    <StackPanel x:ConnectionId='6' Orientation="Horizontal" Height="64"                                          >
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -36,10 +44,10 @@
                                 <RowDefinition Height="*"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image x:ConnectionId='6' Grid.Column="0" Grid.RowSpan="3"                               ></Image>
-                            <TextBlock x:ConnectionId='7' Grid.Column="1" Grid.Row="0"                       Style="{ThemeResource BaseTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" />
-                            <TextBlock x:ConnectionId='8' Grid.Column="1" Grid.Row="1"                           Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
-                            <TextBlock x:ConnectionId='9' Grid.Column="1" Grid.Row="2"                       Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                            <Image x:ConnectionId='7' Grid.Column="0" Grid.RowSpan="3"                               ></Image>
+                            <TextBlock x:ConnectionId='8' Grid.Column="1" Grid.Row="0"                       Style="{ThemeResource BaseTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" />
+                            <TextBlock x:ConnectionId='9' Grid.Column="1" Grid.Row="1"                           Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                            <TextBlock x:ConnectionId='10' Grid.Column="1" Grid.Row="2"                       Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
                         </Grid>
                     </StackPanel>
                 </DataTemplate>

@@ -42,5 +42,14 @@ namespace Projekt
             Debug.WriteLine("Last page History");
             currentPageHandler.LastOpenedPage = "History";
         }
+        private void Exit_ItemClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
+
+        private void Back_ItemClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage), null);
+        }
     }
 }

@@ -70,5 +70,10 @@ namespace Projekt
             Debug.WriteLine("Last page Main");
             currentPageHandler.LastOpenedPage = "Main";
         }
+
+        private void Exit_ItemClick(object sender, RoutedEventArgs e)
+         {
+            Application.Current.Exit();
+        }
     }
 }

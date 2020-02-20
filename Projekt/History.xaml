@@ -7,6 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.TopAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Back" Label="Back" Click="{x:Bind Back_ItemClick}"></AppBarButton>
+                <AppBarButton Icon="Home" Label="Exit" Click="{x:Bind Exit_ItemClick}"></AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.TopAppBar>
 
     <Grid>
         <Button Content="Go Back" Margin="0,114,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click"/>
