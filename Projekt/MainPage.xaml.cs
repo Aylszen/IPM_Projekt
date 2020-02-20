@@ -21,6 +21,8 @@ using CurrencyNamespace;
 using CurrencyViewModelNamespace;
 using DateViewModelNamespace;
 using CurrencyNamespace;
+using CurrentPageHandlerNameSpace;
+using Windows.ApplicationModel.Activation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -29,7 +31,7 @@ namespace Projekt
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    
+
     public sealed partial class MainPage : Page
     {
         HttpGet http;
@@ -42,12 +44,15 @@ namespace Projekt
             currencyDatePicker.MinDate = new DateTime(2002, 1, 2);
             currencyDatePicker.MaxDate = new DateTime(2020, 12, 12);
             start();
+            this.currentPageHandler = CurrentPageHandler.getInstance();
         }
         public DateViewModel dateViewModel { get; set; }
         public CurrencyViewModel currencyViewModel { get; set; }
+        public CurrentPageHandler currentPageHandler { get; set; }
+
         public async void start()
         {
-            string httpGetResult = await http.httpGet(HttpGet.averageExchangeRate + dateViewModel.normalDate + "/" + dateViewModel.normalDate + "/" );
+            string httpGetResult = await http.httpGet(HttpGet.averageExchangeRate + dateViewModel.normalDate + "/" + dateViewModel.normalDate + "/");
             Debug.WriteLine("HttpGet result:" + httpGetResult);
             dynamic CurrencyData = Utilities.parseCurrencyData(httpGetResult);
             currencyViewModel.addCurrencies(CurrencyData);
@@ -58,6 +63,12 @@ namespace Projekt
             var clickedItem = e.ClickedItem;
             Debug.WriteLine("On click: " + clickedItem.ToString());
             Frame.Navigate(typeof(History), null);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Debug.WriteLine("Last page Main");
+            currentPageHandler.LastOpenedPage = "Main";
         }
     }
 }

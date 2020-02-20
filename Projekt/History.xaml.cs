@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CurrentPageHandlerNameSpace;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,14 +24,23 @@ namespace Projekt
     /// </summary>
     public sealed partial class History : Page
     {
+        public CurrentPageHandler currentPageHandler { get; set; }
+
         public History()
         {
             this.InitializeComponent();
+            this.currentPageHandler = CurrentPageHandler.getInstance();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage), null);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Debug.WriteLine("Last page History");
+            currentPageHandler.LastOpenedPage = "History";
         }
     }
 }

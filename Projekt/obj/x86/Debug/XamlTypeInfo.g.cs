@@ -189,23 +189,25 @@ namespace Projekt.Projekt_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[7];
+            _typeNameTable = new string[8];
             _typeNameTable[0] = "Projekt.History";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Projekt.MainPage";
-            _typeNameTable[4] = "DateViewModelNamespace.DateViewModel";
-            _typeNameTable[5] = "Object";
-            _typeNameTable[6] = "CurrencyViewModelNamespace.CurrencyViewModel";
+            _typeNameTable[3] = "CurrentPageHandlerNameSpace.CurrentPageHandler";
+            _typeNameTable[4] = "Object";
+            _typeNameTable[5] = "Projekt.MainPage";
+            _typeNameTable[6] = "DateViewModelNamespace.DateViewModel";
+            _typeNameTable[7] = "CurrencyViewModelNamespace.CurrencyViewModel";
 
-            _typeTable = new global::System.Type[7];
+            _typeTable = new global::System.Type[8];
             _typeTable[0] = typeof(global::Projekt.History);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Projekt.MainPage);
-            _typeTable[4] = typeof(global::DateViewModelNamespace.DateViewModel);
-            _typeTable[5] = typeof(global::System.Object);
-            _typeTable[6] = typeof(global::CurrencyViewModelNamespace.CurrencyViewModel);
+            _typeTable[3] = typeof(global::CurrentPageHandlerNameSpace.CurrentPageHandler);
+            _typeTable[4] = typeof(global::System.Object);
+            _typeTable[5] = typeof(global::Projekt.MainPage);
+            _typeTable[6] = typeof(global::DateViewModelNamespace.DateViewModel);
+            _typeTable[7] = typeof(global::CurrencyViewModelNamespace.CurrencyViewModel);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -241,8 +243,9 @@ namespace Projekt.Projekt_XamlTypeInfo
         }
 
         private object Activate_0_History() { return new global::Projekt.History(); }
-        private object Activate_3_MainPage() { return new global::Projekt.MainPage(); }
-        private object Activate_6_CurrencyViewModel() { return new global::CurrencyViewModelNamespace.CurrencyViewModel(); }
+        private object Activate_3_CurrentPageHandler() { return new global::CurrentPageHandlerNameSpace.CurrentPageHandler(); }
+        private object Activate_5_MainPage() { return new global::Projekt.MainPage(); }
+        private object Activate_7_CurrencyViewModel() { return new global::CurrencyViewModelNamespace.CurrencyViewModel(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -257,6 +260,7 @@ namespace Projekt.Projekt_XamlTypeInfo
             case 0:   //  Projekt.History
                 userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_History;
+                userType.AddMemberName("currentPageHandler");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -269,27 +273,35 @@ namespace Projekt.Projekt_XamlTypeInfo
                 xamlType = new global::Projekt.Projekt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Projekt.MainPage
-                userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_MainPage;
-                userType.AddMemberName("dateViewModel");
-                userType.AddMemberName("currencyViewModel");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 4:   //  DateViewModelNamespace.DateViewModel
+            case 3:   //  CurrentPageHandlerNameSpace.CurrentPageHandler
                 userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  Object
+            case 4:   //  Object
                 xamlType = new global::Projekt.Projekt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  CurrencyViewModelNamespace.CurrencyViewModel
+            case 5:   //  Projekt.MainPage
+                userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_5_MainPage;
+                userType.AddMemberName("dateViewModel");
+                userType.AddMemberName("currencyViewModel");
+                userType.AddMemberName("currentPageHandler");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  DateViewModelNamespace.DateViewModel
+                userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  CurrencyViewModelNamespace.CurrencyViewModel
                 userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
@@ -300,25 +312,45 @@ namespace Projekt.Projekt_XamlTypeInfo
         }
 
 
-        private object get_0_MainPage_dateViewModel(object instance)
+        private object get_0_History_currentPageHandler(object instance)
+        {
+            var that = (global::Projekt.History)instance;
+            return that.currentPageHandler;
+        }
+        private void set_0_History_currentPageHandler(object instance, object Value)
+        {
+            var that = (global::Projekt.History)instance;
+            that.currentPageHandler = (global::CurrentPageHandlerNameSpace.CurrentPageHandler)Value;
+        }
+        private object get_1_MainPage_dateViewModel(object instance)
         {
             var that = (global::Projekt.MainPage)instance;
             return that.dateViewModel;
         }
-        private void set_0_MainPage_dateViewModel(object instance, object Value)
+        private void set_1_MainPage_dateViewModel(object instance, object Value)
         {
             var that = (global::Projekt.MainPage)instance;
             that.dateViewModel = (global::DateViewModelNamespace.DateViewModel)Value;
         }
-        private object get_1_MainPage_currencyViewModel(object instance)
+        private object get_2_MainPage_currencyViewModel(object instance)
         {
             var that = (global::Projekt.MainPage)instance;
             return that.currencyViewModel;
         }
-        private void set_1_MainPage_currencyViewModel(object instance, object Value)
+        private void set_2_MainPage_currencyViewModel(object instance, object Value)
         {
             var that = (global::Projekt.MainPage)instance;
             that.currencyViewModel = (global::CurrencyViewModelNamespace.CurrencyViewModel)Value;
+        }
+        private object get_3_MainPage_currentPageHandler(object instance)
+        {
+            var that = (global::Projekt.MainPage)instance;
+            return that.currentPageHandler;
+        }
+        private void set_3_MainPage_currentPageHandler(object instance, object Value)
+        {
+            var that = (global::Projekt.MainPage)instance;
+            that.currentPageHandler = (global::CurrentPageHandlerNameSpace.CurrentPageHandler)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -328,17 +360,29 @@ namespace Projekt.Projekt_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "Projekt.History.currentPageHandler":
+                userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Projekt.History");
+                xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "currentPageHandler", "CurrentPageHandlerNameSpace.CurrentPageHandler");
+                xamlMember.Getter = get_0_History_currentPageHandler;
+                xamlMember.Setter = set_0_History_currentPageHandler;
+                break;
             case "Projekt.MainPage.dateViewModel":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Projekt.MainPage");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "dateViewModel", "DateViewModelNamespace.DateViewModel");
-                xamlMember.Getter = get_0_MainPage_dateViewModel;
-                xamlMember.Setter = set_0_MainPage_dateViewModel;
+                xamlMember.Getter = get_1_MainPage_dateViewModel;
+                xamlMember.Setter = set_1_MainPage_dateViewModel;
                 break;
             case "Projekt.MainPage.currencyViewModel":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Projekt.MainPage");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "currencyViewModel", "CurrencyViewModelNamespace.CurrencyViewModel");
-                xamlMember.Getter = get_1_MainPage_currencyViewModel;
-                xamlMember.Setter = set_1_MainPage_currencyViewModel;
+                xamlMember.Getter = get_2_MainPage_currencyViewModel;
+                xamlMember.Setter = set_2_MainPage_currencyViewModel;
+                break;
+            case "Projekt.MainPage.currentPageHandler":
+                userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Projekt.MainPage");
+                xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "currentPageHandler", "CurrentPageHandlerNameSpace.CurrentPageHandler");
+                xamlMember.Getter = get_3_MainPage_currentPageHandler;
+                xamlMember.Setter = set_3_MainPage_currentPageHandler;
                 break;
             }
             return xamlMember;
