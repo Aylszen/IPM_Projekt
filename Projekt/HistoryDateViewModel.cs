@@ -11,31 +11,42 @@ using System.Threading.Tasks;
 using UtilitiesNamespace;
 using Windows.UI.Xaml.Controls;
 
-namespace DateViewModelNamespace
+namespace HistoryDateViewModelNamespace
 {
-    public class DateViewModel : INotifyPropertyChanged
+    public class HistoryDateViewModel : INotifyPropertyChanged
     {
         private Windows.Storage.ApplicationDataContainer localSettings;
         private Windows.Storage.ApplicationDataCompositeValue composite;
-        private const string CONTAINER_NAME = "currentDateSetting";
-        private const string CONTAINER_DATETIME_FIELD = "dateTime";
-        private CurrencyViewModel currencyViewModel;
-        private DateTimeOffset dateTime;
-        public String normalDate;
+        private const string CONTAINER_NAME = "historyOfDateSetting";
+        private const string CONTAINER_DATETIME_START_FIELD = "dateTimeStart";
+        private const string CONTAINER_DATETIME_END_FIELD = "dateTimeEnd";
+        private DateTimeOffset dateTimeStart;
+        private DateTimeOffset dateTimeEnd;
+        public String normalDateTimeStart;
+        public String normalDateTimeEnd;
         HttpGet http;
-        public DateTimeOffset DateTime
+        public DateTimeOffset DateTimeStart
         {
-            get => dateTime;
+            get => dateTimeStart;
             set
             {
-                DateTimeOffset previousDate = this.dateTime; 
-                this.dateTime = value.Date;
-                Debug.WriteLine("Date time: " + dateTime);
-                normalDate = Utilities.parseDateTimeOffset(this.dateTime);
-                //
-                start(previousDate);
+                this.dateTimeStart = value.Date;
+                Debug.WriteLine("Date time start: " + dateTimeStart);
+                normalDateTimeStart = Utilities.parseDateTimeOffset(this.dateTimeStart);
                 StoreData();
-                //
+                this.OnPropertyChanged();
+            }
+        }
+
+        public DateTimeOffset DateTimeEnd
+        {
+            get => dateTimeEnd;
+            set
+            {
+                this.dateTimeEnd = value.Date;
+                Debug.WriteLine("Date time End: " + dateTimeEnd);
+                normalDateTimeEnd = Utilities.parseDateTimeOffset(this.dateTimeEnd);
+                StoreData();
                 this.OnPropertyChanged();
             }
         }
@@ -45,17 +56,16 @@ namespace DateViewModelNamespace
             ContentDialog noWifiDialog = new ContentDialog
             {
                 Title = "No data",
-                Content = "No data available for this date",
+                Content = "No data available for this period",
                 CloseButtonText = "Ok"
             };
 
             ContentDialogResult result = await noWifiDialog.ShowAsync();
         }
 
-        public DateViewModel(CurrencyViewModelNamespace.CurrencyViewModel currencyViewModel)
+        public HistoryDateViewModel()
         {
             this.http = new HttpGet();
-            this.currencyViewModel = currencyViewModel;
             localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             composite = (Windows.Storage.ApplicationDataCompositeValue)localSettings.Values[CONTAINER_NAME];
             if (composite == null)
@@ -65,30 +75,29 @@ namespace DateViewModelNamespace
             }
             else
             {
-                dateTime = (DateTimeOffset)composite[CONTAINER_DATETIME_FIELD];
+                dateTimeStart = (DateTimeOffset)composite[CONTAINER_DATETIME_START_FIELD];
+                dateTimeEnd = (DateTimeOffset)composite[CONTAINER_DATETIME_END_FIELD];
             }
         }
 
         public async void start(DateTimeOffset previousDate)
         {
-            string httpGetResult = await http.httpGet(HttpGet.averageExchangeRate + normalDate + "/" + normalDate + "/");
+            string httpGetResult = await http.httpGet(HttpGet.history + normalDateTimeStart + "/" + normalDateTimeEnd + "/");
             Debug.WriteLine("HttpGet result:" + httpGetResult);
             if (httpGetResult == null)
             {
                 DisplayNoDataForThisDataAvailable();
-                Debug.WriteLine("Prev date:" + previousDate);
-                this.dateTime = previousDate;
             }
             else
             {
                 dynamic CurrencyData = Utilities.parseCurrencyData(httpGetResult);
-                currencyViewModel.addCurrencies(CurrencyData);
             }
         }
-        
+
         public void StoreData()
         {
-            composite[CONTAINER_DATETIME_FIELD] = dateTime;
+            composite[CONTAINER_DATETIME_START_FIELD] = dateTimeStart;
+            composite[CONTAINER_DATETIME_END_FIELD] = dateTimeEnd;
             localSettings.Values[CONTAINER_NAME] = composite;
         }
 

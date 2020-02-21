@@ -15,6 +15,7 @@ namespace HttpGetNameSpace
     {   
         private String mainApi = "http://api.nbp.pl/api/";
         static public String averageExchangeRate = "exchangerates/tables/a/";
+        static public String history = "exchangerates/rates/a/";
         public async Task<dynamic> httpGet(String address)
         {
             Uri uri = new System.Uri(mainApi + address);

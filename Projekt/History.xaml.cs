@@ -1,4 +1,5 @@
 ﻿using CurrentPageHandlerNameSpace;
+using HistoryDateViewModelNamespace;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -25,11 +26,18 @@ namespace Projekt
     public sealed partial class History : Page
     {
         public CurrentPageHandler currentPageHandler { get; set; }
+        public HistoryDateViewModel historyDateViewModel { get; set; }
 
         public History()
         {
             this.InitializeComponent();
             this.currentPageHandler = CurrentPageHandler.getInstance();
+            this.historyDateViewModel = new HistoryDateViewModel();
+
+            historyDateStart.MinDate = new DateTime(2002, 1, 2);
+            historyDateStart.MaxDate = new DateTime(2020, 12, 12);
+            historyDateEnd.MinDate = new DateTime(2002, 1, 2);
+            historyDateEnd.MaxDate = new DateTime(2020, 12, 12);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

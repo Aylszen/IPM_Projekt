@@ -29,8 +29,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"></RowDefinition>
             </Grid.RowDefinitions>
-            <CalendarDatePicker Grid.Column ="0" Grid.Row="0" x:Name="hitoryDateStart" Header="Start date" HorizontalAlignment="Center" />
-            <CalendarDatePicker Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" HorizontalAlignment="Center" />
+            <CalendarDatePicker Grid.Column ="0" Grid.Row="0" x:Name="historyDateStart" Header="Start date" HorizontalAlignment="Center" Date="{x:Bind historyDateViewModel.DateTimeStart, Mode=TwoWay}" />
+            <CalendarDatePicker Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" HorizontalAlignment="Center" Date="{x:Bind historyDateViewModel.DateTimeEnd, Mode=TwoWay}" />
         </Grid>
         <Grid>
             <Grid.ColumnDefinitions>
