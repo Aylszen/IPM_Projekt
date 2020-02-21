@@ -55,13 +55,16 @@
       <RootProperty Name="Title" />
       <RootProperty Name="IndependentValuePath" />
       <RootProperty Name="DependentValuePath" />
+      <RootProperty Name="ItemsSource" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="Content" />
       <RootProperty Name="FontSize" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
       <RootMethod Name="GetName" />

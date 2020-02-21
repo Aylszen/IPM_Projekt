@@ -29,8 +29,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"></RowDefinition>
             </Grid.RowDefinitions>
-            <CalendarDatePicker x:ConnectionId='7' Grid.Column ="0" Grid.Row="0" x:Name="historyDateStart" Header="Start date" HorizontalAlignment="Center"                                                                 />
-            <CalendarDatePicker x:ConnectionId='8' Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" HorizontalAlignment="Center"                                                               />
+            <CalendarDatePicker x:ConnectionId='8' Grid.Column ="0" Grid.Row="0" x:Name="historyDateStart" Header="Start date" HorizontalAlignment="Center"                                                                 />
+            <CalendarDatePicker x:ConnectionId='9' Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" HorizontalAlignment="Center"                                                               />
         </Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -39,7 +39,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button HorizontalAlignment="Center" Height="25" Width="75" AutomationProperties.Name="Download" Content="Download data" FontSize="8"/>
+            <Button x:ConnectionId='7' HorizontalAlignment="Center" Height="25" Width="95" AutomationProperties.Name="Download" Content="Download data" FontSize="10"                                   />
 
         </Grid>
 
@@ -54,8 +54,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Charting:Chart x:ConnectionId='6' Grid.Column ="0" Grid.Row="0" x:Name="LineChart" HorizontalAlignment="Center" Margin="5" Width="426">
-                <Charting:LineSeries Title="Currency value" IndependentValuePath="months" DependentValuePath="countlent" />
+            <Charting:Chart x:ConnectionId='6' x:Name="LineChart" Grid.Column ="0" Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,0" Width="421">
+                <Charting:LineSeries Title="Currency value" IndependentValuePath="Date" DependentValuePath="Price" ItemsSource="{Binding}"/>
             </Charting:Chart>
         </Grid>
     </StackPanel>

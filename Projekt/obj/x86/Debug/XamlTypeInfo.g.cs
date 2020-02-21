@@ -241,11 +241,11 @@ namespace Projekt.Projekt_XamlTypeInfo
             _typeNameTable[24] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries";
             _typeNameTable[25] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.Series";
             _typeNameTable[26] = "String";
-            _typeNameTable[27] = "Windows.UI.Xaml.Media.PointCollection";
-            _typeNameTable[28] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis";
-            _typeNameTable[29] = "System.Nullable`1<Int32>";
-            _typeNameTable[30] = "Windows.UI.Xaml.Data.Binding";
-            _typeNameTable[31] = "System.Collections.IEnumerable";
+            _typeNameTable[27] = "System.Collections.IEnumerable";
+            _typeNameTable[28] = "Windows.UI.Xaml.Media.PointCollection";
+            _typeNameTable[29] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis";
+            _typeNameTable[30] = "System.Nullable`1<Int32>";
+            _typeNameTable[31] = "Windows.UI.Xaml.Data.Binding";
             _typeNameTable[32] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence";
             _typeNameTable[33] = "Windows.UI.Xaml.Media.Animation.EasingFunctionBase";
             _typeNameTable[34] = "Boolean";
@@ -288,11 +288,11 @@ namespace Projekt.Projekt_XamlTypeInfo
             _typeTable[24] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries);
             _typeTable[25] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.Series);
             _typeTable[26] = typeof(global::System.String);
-            _typeTable[27] = typeof(global::Windows.UI.Xaml.Media.PointCollection);
-            _typeTable[28] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis);
-            _typeTable[29] = typeof(global::System.Nullable<global::System.Int32>);
-            _typeTable[30] = typeof(global::Windows.UI.Xaml.Data.Binding);
-            _typeTable[31] = typeof(global::System.Collections.IEnumerable);
+            _typeTable[27] = typeof(global::System.Collections.IEnumerable);
+            _typeTable[28] = typeof(global::Windows.UI.Xaml.Media.PointCollection);
+            _typeTable[29] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis);
+            _typeTable[30] = typeof(global::System.Nullable<global::System.Int32>);
+            _typeTable[31] = typeof(global::Windows.UI.Xaml.Data.Binding);
             _typeTable[32] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence);
             _typeTable[33] = typeof(global::Windows.UI.Xaml.Media.Animation.EasingFunctionBase);
             _typeTable[34] = typeof(global::System.Boolean);
@@ -586,9 +586,9 @@ namespace Projekt.Projekt_XamlTypeInfo
                 userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.Series"));
                 userType.AddMemberName("IndependentValuePath");
                 userType.AddMemberName("DependentValuePath");
+                userType.AddMemberName("ItemsSource");
                 userType.AddMemberName("DependentValueBinding");
                 userType.AddMemberName("IndependentValueBinding");
-                userType.AddMemberName("ItemsSource");
                 userType.AddMemberName("AnimationSequence");
                 userType.AddMemberName("TransitionEasingFunction");
                 userType.AddMemberName("IsSelectionEnabled");
@@ -611,30 +611,30 @@ namespace Projekt.Projekt_XamlTypeInfo
                 xamlType = new global::Projekt.Projekt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 27:   //  Windows.UI.Xaml.Media.PointCollection
-                xamlType = new global::Projekt.Projekt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 28:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis
+            case 27:   //  System.Collections.IEnumerable
                 userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 29:   //  System.Nullable`1<Int32>
+            case 28:   //  Windows.UI.Xaml.Media.PointCollection
+                xamlType = new global::Projekt.Projekt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 29:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis
+                userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 30:   //  System.Nullable`1<Int32>
                 userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 30:   //  Windows.UI.Xaml.Data.Binding
+            case 31:   //  Windows.UI.Xaml.Data.Binding
                 xamlType = new global::Projekt.Projekt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 31:   //  System.Collections.IEnumerable
-                userType = new global::Projekt.Projekt_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
                 break;
 
             case 32:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence
@@ -935,85 +935,85 @@ namespace Projekt.Projekt_XamlTypeInfo
             var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
             that.DependentValuePath = (global::System.String)Value;
         }
-        private object get_18_LineSeries_Points(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries)instance;
-            return that.Points;
-        }
-        private object get_19_LineSeries_PolylineStyle(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries)instance;
-            return that.PolylineStyle;
-        }
-        private void set_19_LineSeries_PolylineStyle(object instance, object Value)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries)instance;
-            that.PolylineStyle = (global::Windows.UI.Xaml.Style)Value;
-        }
-        private object get_20_LineAreaBaseSeries_DependentRangeAxis(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
-            return that.DependentRangeAxis;
-        }
-        private void set_20_LineAreaBaseSeries_DependentRangeAxis(object instance, object Value)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
-            that.DependentRangeAxis = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis)Value;
-        }
-        private object get_21_LineAreaBaseSeries_IndependentAxis(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
-            return that.IndependentAxis;
-        }
-        private void set_21_LineAreaBaseSeries_IndependentAxis(object instance, object Value)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
-            that.IndependentAxis = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis)Value;
-        }
-        private object get_22_LineAreaBaseSeries_ActualIndependentAxis(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
-            return that.ActualIndependentAxis;
-        }
-        private object get_23_LineAreaBaseSeries_ActualDependentRangeAxis(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
-            return that.ActualDependentRangeAxis;
-        }
-        private object get_24_DataPointSingleSeriesWithAxes_GlobalSeriesIndex(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes)instance;
-            return that.GlobalSeriesIndex;
-        }
-        private object get_25_DataPointSeries_DependentValueBinding(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
-            return that.DependentValueBinding;
-        }
-        private void set_25_DataPointSeries_DependentValueBinding(object instance, object Value)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
-            that.DependentValueBinding = (global::Windows.UI.Xaml.Data.Binding)Value;
-        }
-        private object get_26_DataPointSeries_IndependentValueBinding(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
-            return that.IndependentValueBinding;
-        }
-        private void set_26_DataPointSeries_IndependentValueBinding(object instance, object Value)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
-            that.IndependentValueBinding = (global::Windows.UI.Xaml.Data.Binding)Value;
-        }
-        private object get_27_DataPointSeries_ItemsSource(object instance)
+        private object get_18_DataPointSeries_ItemsSource(object instance)
         {
             var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
             return that.ItemsSource;
         }
-        private void set_27_DataPointSeries_ItemsSource(object instance, object Value)
+        private void set_18_DataPointSeries_ItemsSource(object instance, object Value)
         {
             var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
             that.ItemsSource = (global::System.Collections.IEnumerable)Value;
+        }
+        private object get_19_LineSeries_Points(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries)instance;
+            return that.Points;
+        }
+        private object get_20_LineSeries_PolylineStyle(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries)instance;
+            return that.PolylineStyle;
+        }
+        private void set_20_LineSeries_PolylineStyle(object instance, object Value)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries)instance;
+            that.PolylineStyle = (global::Windows.UI.Xaml.Style)Value;
+        }
+        private object get_21_LineAreaBaseSeries_DependentRangeAxis(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
+            return that.DependentRangeAxis;
+        }
+        private void set_21_LineAreaBaseSeries_DependentRangeAxis(object instance, object Value)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
+            that.DependentRangeAxis = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis)Value;
+        }
+        private object get_22_LineAreaBaseSeries_IndependentAxis(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
+            return that.IndependentAxis;
+        }
+        private void set_22_LineAreaBaseSeries_IndependentAxis(object instance, object Value)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
+            that.IndependentAxis = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis)Value;
+        }
+        private object get_23_LineAreaBaseSeries_ActualIndependentAxis(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
+            return that.ActualIndependentAxis;
+        }
+        private object get_24_LineAreaBaseSeries_ActualDependentRangeAxis(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>)instance;
+            return that.ActualDependentRangeAxis;
+        }
+        private object get_25_DataPointSingleSeriesWithAxes_GlobalSeriesIndex(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes)instance;
+            return that.GlobalSeriesIndex;
+        }
+        private object get_26_DataPointSeries_DependentValueBinding(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
+            return that.DependentValueBinding;
+        }
+        private void set_26_DataPointSeries_DependentValueBinding(object instance, object Value)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
+            that.DependentValueBinding = (global::Windows.UI.Xaml.Data.Binding)Value;
+        }
+        private object get_27_DataPointSeries_IndependentValueBinding(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
+            return that.IndependentValueBinding;
+        }
+        private void set_27_DataPointSeries_IndependentValueBinding(object instance, object Value)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries)instance;
+            that.IndependentValueBinding = (global::Windows.UI.Xaml.Data.Binding)Value;
         }
         private object get_28_DataPointSeries_AnimationSequence(object instance)
         {
@@ -1274,71 +1274,71 @@ namespace Projekt.Projekt_XamlTypeInfo
                 xamlMember.Getter = get_17_DataPointSeries_DependentValuePath;
                 xamlMember.Setter = set_17_DataPointSeries_DependentValuePath;
                 break;
+            case "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries.ItemsSource":
+                userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries");
+                xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "ItemsSource", "System.Collections.IEnumerable");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_18_DataPointSeries_ItemsSource;
+                xamlMember.Setter = set_18_DataPointSeries_ItemsSource;
+                break;
             case "WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries.Points":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "Points", "Windows.UI.Xaml.Media.PointCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_18_LineSeries_Points;
+                xamlMember.Getter = get_19_LineSeries_Points;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries.PolylineStyle":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "PolylineStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_19_LineSeries_PolylineStyle;
-                xamlMember.Setter = set_19_LineSeries_PolylineStyle;
+                xamlMember.Getter = get_20_LineSeries_PolylineStyle;
+                xamlMember.Setter = set_20_LineSeries_PolylineStyle;
                 break;
             case "WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>.DependentRangeAxis":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "DependentRangeAxis", "WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_20_LineAreaBaseSeries_DependentRangeAxis;
-                xamlMember.Setter = set_20_LineAreaBaseSeries_DependentRangeAxis;
+                xamlMember.Getter = get_21_LineAreaBaseSeries_DependentRangeAxis;
+                xamlMember.Setter = set_21_LineAreaBaseSeries_DependentRangeAxis;
                 break;
             case "WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>.IndependentAxis":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "IndependentAxis", "WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_21_LineAreaBaseSeries_IndependentAxis;
-                xamlMember.Setter = set_21_LineAreaBaseSeries_IndependentAxis;
+                xamlMember.Getter = get_22_LineAreaBaseSeries_IndependentAxis;
+                xamlMember.Setter = set_22_LineAreaBaseSeries_IndependentAxis;
                 break;
             case "WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>.ActualIndependentAxis":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "ActualIndependentAxis", "WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis");
-                xamlMember.Getter = get_22_LineAreaBaseSeries_ActualIndependentAxis;
+                xamlMember.Getter = get_23_LineAreaBaseSeries_ActualIndependentAxis;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>.ActualDependentRangeAxis":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "ActualDependentRangeAxis", "WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis");
-                xamlMember.Getter = get_23_LineAreaBaseSeries_ActualDependentRangeAxis;
+                xamlMember.Getter = get_24_LineAreaBaseSeries_ActualDependentRangeAxis;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes.GlobalSeriesIndex":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "GlobalSeriesIndex", "System.Nullable`1<Int32>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_24_DataPointSingleSeriesWithAxes_GlobalSeriesIndex;
+                xamlMember.Getter = get_25_DataPointSingleSeriesWithAxes_GlobalSeriesIndex;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries.DependentValueBinding":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "DependentValueBinding", "Windows.UI.Xaml.Data.Binding");
-                xamlMember.Getter = get_25_DataPointSeries_DependentValueBinding;
-                xamlMember.Setter = set_25_DataPointSeries_DependentValueBinding;
+                xamlMember.Getter = get_26_DataPointSeries_DependentValueBinding;
+                xamlMember.Setter = set_26_DataPointSeries_DependentValueBinding;
                 break;
             case "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries.IndependentValueBinding":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries");
                 xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "IndependentValueBinding", "Windows.UI.Xaml.Data.Binding");
-                xamlMember.Getter = get_26_DataPointSeries_IndependentValueBinding;
-                xamlMember.Setter = set_26_DataPointSeries_IndependentValueBinding;
-                break;
-            case "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries.ItemsSource":
-                userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries");
-                xamlMember = new global::Projekt.Projekt_XamlTypeInfo.XamlMember(this, "ItemsSource", "System.Collections.IEnumerable");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_27_DataPointSeries_ItemsSource;
-                xamlMember.Setter = set_27_DataPointSeries_ItemsSource;
+                xamlMember.Getter = get_27_DataPointSeries_IndependentValueBinding;
+                xamlMember.Setter = set_27_DataPointSeries_IndependentValueBinding;
                 break;
             case "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries.AnimationSequence":
                 userType = (global::Projekt.Projekt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries");

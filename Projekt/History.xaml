@@ -39,7 +39,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button HorizontalAlignment="Center" Height="25" Width="75" AutomationProperties.Name="Download" Content="Download data" FontSize="8"/>
+            <Button HorizontalAlignment="Center" Height="25" Width="95" AutomationProperties.Name="Download" Content="Download data" FontSize="10" Click="Download_Data_Button_Click"/>
 
         </Grid>
 
@@ -54,8 +54,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Charting:Chart Grid.Column ="0" Grid.Row="0" x:Name="LineChart" HorizontalAlignment="Center" Margin="5" Width="426">
-                <Charting:LineSeries Title="Currency value" IndependentValuePath="months" DependentValuePath="countlent" />
+            <Charting:Chart x:Name="LineChart" Grid.Column ="0" Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,0" Width="421">
+                <Charting:LineSeries Title="Currency value" IndependentValuePath="Date" DependentValuePath="Price" ItemsSource="{Binding}"/>
             </Charting:Chart>
         </Grid>
     </StackPanel>

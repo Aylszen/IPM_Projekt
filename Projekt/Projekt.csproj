@@ -119,6 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CurrencyHistoryViewModel.cs" />
     <Compile Include="CurrentPageHandler.cs" />
     <Compile Include="HistoryDateViewModel.cs" />
     <Compile Include="DateViewModel.cs" />

@@ -51,18 +51,6 @@ namespace HistoryDateViewModelNamespace
             }
         }
 
-        private async void DisplayNoDataForThisDataAvailable()
-        {
-            ContentDialog noWifiDialog = new ContentDialog
-            {
-                Title = "No data",
-                Content = "No data available for this period",
-                CloseButtonText = "Ok"
-            };
-
-            ContentDialogResult result = await noWifiDialog.ShowAsync();
-        }
-
         public HistoryDateViewModel()
         {
             this.http = new HttpGet();
@@ -76,21 +64,9 @@ namespace HistoryDateViewModelNamespace
             else
             {
                 dateTimeStart = (DateTimeOffset)composite[CONTAINER_DATETIME_START_FIELD];
+                normalDateTimeStart = Utilities.parseDateTimeOffset(dateTimeStart);
                 dateTimeEnd = (DateTimeOffset)composite[CONTAINER_DATETIME_END_FIELD];
-            }
-        }
-
-        public async void start(DateTimeOffset previousDate)
-        {
-            string httpGetResult = await http.httpGet(HttpGet.history + normalDateTimeStart + "/" + normalDateTimeEnd + "/");
-            Debug.WriteLine("HttpGet result:" + httpGetResult);
-            if (httpGetResult == null)
-            {
-                DisplayNoDataForThisDataAvailable();
-            }
-            else
-            {
-                dynamic CurrencyData = Utilities.parseCurrencyData(httpGetResult);
+                normalDateTimeEnd = Utilities.parseDateTimeOffset(dateTimeEnd);
             }
         }
 

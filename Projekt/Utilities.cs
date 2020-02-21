@@ -17,6 +17,12 @@ namespace UtilitiesNamespace
             return obj;
         }
 
+        public static dynamic parseCurrencyHistoryData(string currencyData)
+        {
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(currencyData);
+            return obj;
+        }
+
         public static String parseDateTimeOffset(DateTimeOffset dateTime)
         {
             String newDateTime = dateTime.Date.ToString();

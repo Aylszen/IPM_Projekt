@@ -13,6 +13,7 @@ namespace CurrencyNamespace
         public string Name { get; set; }
         public string ShortName { get; set; }
         public string Price { get; set; }
+        public string Date { get; set; }
         public string CountryImage { get; set; }
 
         public const string imagePathFirst = "https://www.countryflags.io/";
@@ -25,6 +26,12 @@ namespace CurrencyNamespace
         {
             this.Name = Name;
             this.ShortName = ShortName;
+            this.Price = Price;
+        }
+
+        public Currency(String Date, String Price)
+        {
+            this.Date = Date;
             this.Price = Price;
         }
     }
