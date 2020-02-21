@@ -1,4 +1,5 @@
-﻿using CurrencyViewModelNamespace;
+﻿using CurrencyNamespace;
+using CurrencyViewModelNamespace;
 using CurrentPageHandlerNameSpace;
 using HistoryDateViewModelNamespace;
 using HttpGetNameSpace;
@@ -33,6 +34,7 @@ namespace Projekt
         public CurrentPageHandler currentPageHandler { get; set; }
         public HistoryDateViewModel historyDateViewModel { get; set; }
         HttpGet http;
+
         public History()
         {
             this.InitializeComponent();
@@ -54,6 +56,16 @@ namespace Projekt
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Debug.WriteLine("Last page History");
+            Currency currency = (Currency)e.Parameter;
+            if (currency != null)
+            {
+                this.historyDateViewModel.Code = currency.ShortName;
+            }
+            else
+            {
+                //this.historyDateViewModel.Code = 
+            }
+            Debug.WriteLine("History, currency: " + this.historyDateViewModel.Code);
             currentPageHandler.LastOpenedPage = "History";
         }
         private void Exit_ItemClick(object sender, RoutedEventArgs e)
@@ -68,7 +80,7 @@ namespace Projekt
 
         public async void downloadData()
         {
-            string httpGetResult = await http.httpGet(HttpGet.history + "gbp/" + historyDateViewModel.normalDateTimeStart + "/" + historyDateViewModel.normalDateTimeEnd + "/");
+            string httpGetResult = await http.httpGet(HttpGet.history + this.historyDateViewModel.Code + "/"  + historyDateViewModel.normalDateTimeStart + "/" + historyDateViewModel.normalDateTimeEnd + "/");
             Debug.WriteLine("HttpGet result:" + httpGetResult);
 
 

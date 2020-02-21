@@ -62,7 +62,7 @@ namespace Projekt
         {
             var clickedItem = e.ClickedItem;
             Debug.WriteLine("On click: " + clickedItem.ToString());
-            Frame.Navigate(typeof(History), null);
+            Frame.Navigate(typeof(History), clickedItem);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

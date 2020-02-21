@@ -20,11 +20,24 @@ namespace HistoryDateViewModelNamespace
         private const string CONTAINER_NAME = "historyOfDateSetting";
         private const string CONTAINER_DATETIME_START_FIELD = "dateTimeStart";
         private const string CONTAINER_DATETIME_END_FIELD = "dateTimeEnd";
+        private const string CONTAINER_CURRENCY_CODE = "code";
+
         private DateTimeOffset dateTimeStart;
         private DateTimeOffset dateTimeEnd;
         public String normalDateTimeStart;
         public String normalDateTimeEnd;
+        public String code;
         HttpGet http;
+        public String Code
+        {
+            get => code;
+            set
+            {
+                this.code = value;
+                StoreCodeData(this.code);
+            }
+        }
+
         public DateTimeOffset DateTimeStart
         {
             get => dateTimeStart;
@@ -67,6 +80,7 @@ namespace HistoryDateViewModelNamespace
                 normalDateTimeStart = Utilities.parseDateTimeOffset(dateTimeStart);
                 dateTimeEnd = (DateTimeOffset)composite[CONTAINER_DATETIME_END_FIELD];
                 normalDateTimeEnd = Utilities.parseDateTimeOffset(dateTimeEnd);
+                code = (String)composite[CONTAINER_CURRENCY_CODE];
             }
         }
 
@@ -74,6 +88,12 @@ namespace HistoryDateViewModelNamespace
         {
             composite[CONTAINER_DATETIME_START_FIELD] = dateTimeStart;
             composite[CONTAINER_DATETIME_END_FIELD] = dateTimeEnd;
+            localSettings.Values[CONTAINER_NAME] = composite;
+        }
+
+        public void StoreCodeData(String code)
+        {
+            composite[CONTAINER_CURRENCY_CODE] = code;
             localSettings.Values[CONTAINER_NAME] = composite;
         }
 

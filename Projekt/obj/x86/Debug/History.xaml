@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.TopAppBar>
@@ -29,8 +30,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"></RowDefinition>
             </Grid.RowDefinitions>
-            <CalendarDatePicker x:ConnectionId='8' Grid.Column ="0" Grid.Row="0" x:Name="historyDateStart" Header="Start date" HorizontalAlignment="Center"                                                                 />
-            <CalendarDatePicker x:ConnectionId='9' Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" HorizontalAlignment="Center"                                                               />
+            <CalendarDatePicker x:ConnectionId='9' Grid.Column ="0" Grid.Row="0" x:Name="historyDateStart" Header="Start date" HorizontalAlignment="Center"                                                                 />
+            <CalendarDatePicker x:ConnectionId='10' Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" HorizontalAlignment="Center"                                                               />
         </Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -39,14 +40,14 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button x:ConnectionId='7' HorizontalAlignment="Center" Height="25" Width="95" AutomationProperties.Name="Download" Content="Download data" FontSize="10"                                   />
+            <Button x:ConnectionId='8' HorizontalAlignment="Center" Height="25" Width="95" AutomationProperties.Name="Download" Content="Download data" FontSize="10"                                   />
 
         </Grid>
 
         <Grid x:ConnectionId='5'
         x:Name="grid_panel_chart" 
         Margin="5,5,5,5" 
-        Padding="5"
+        Padding="5" Height="285"
         >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -55,7 +56,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <Charting:Chart x:ConnectionId='6' x:Name="LineChart" Grid.Column ="0" Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,0" Width="421">
-                <Charting:LineSeries Title="Currency value" IndependentValuePath="Date" DependentValuePath="Price" ItemsSource="{Binding}"/>
+                <Charting:LineSeries x:ConnectionId='7'                                                         IndependentValuePath="Date" DependentValuePath="Price" ItemsSource="{Binding}" HorizontalAlignment="Stretch"/>
             </Charting:Chart>
         </Grid>
     </StackPanel>
