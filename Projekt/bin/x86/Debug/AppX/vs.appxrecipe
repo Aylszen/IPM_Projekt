@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-02-20T21:31:05.565</Modified>
+      <Modified>2020-02-21T09:55:03.180</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\Projekt.exe">
       <PackagePath>entrypoint\Projekt.exe</PackagePath>
-      <Modified>2020-02-20T21:31:04.999</Modified>
+      <Modified>2020-02-21T09:55:01.923</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -518,6 +518,30 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T22:15:04.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ekrzkit\.nuget\packages\winrtxamltoolkit\2.3.0\lib\uap10.0\WinRTXamlToolkit.dll">
+      <PackagePath>WinRTXamlToolkit.dll</PackagePath>
+      <Modified>2017-02-12T11:18:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ekrzkit\.nuget\packages\winrtxamltoolkit.controls.datavisualization\2.3.0\lib\uap10.0\WinRTXamlToolkit.Controls.DataVisualization.dll">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization.dll</PackagePath>
+      <Modified>2017-02-12T11:18:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ekrzkit\.nuget\packages\winrtxamltoolkit\2.3.0\lib\uap10.0\WinRTXamlToolkit\WinRTXamlToolkit.xr.xml">
+      <PackagePath>WinRTXamlToolkit\WinRTXamlToolkit.xr.xml</PackagePath>
+      <Modified>2017-02-12T11:18:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ekrzkit\.nuget\packages\winrtxamltoolkit\2.3.0\lib\uap10.0\WinRTXamlToolkit\Properties\WinRTXamlToolkit.rd.xml">
+      <PackagePath>WinRTXamlToolkit\Properties\WinRTXamlToolkit.rd.xml</PackagePath>
+      <Modified>2017-02-12T11:18:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ekrzkit\.nuget\packages\winrtxamltoolkit.controls.datavisualization\2.3.0\lib\uap10.0\WinRTXamlToolkit.Controls.DataVisualization\WinRTXamlToolkit.Controls.DataVisualization.xr.xml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\WinRTXamlToolkit.Controls.DataVisualization.xr.xml</PackagePath>
+      <Modified>2017-02-12T11:18:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ekrzkit\.nuget\packages\winrtxamltoolkit.controls.datavisualization\2.3.0\lib\uap10.0\WinRTXamlToolkit.Controls.DataVisualization\Properties\WinRTXamlToolkit.Controls.DataVisualization.rd.xml">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Properties\WinRTXamlToolkit.Controls.DataVisualization.rd.xml</PackagePath>
+      <Modified>2017-02-12T11:18:54.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2020-01-19T16:41:44.763</Modified>
@@ -558,19 +582,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\Projekt.xr.xml">
       <PackagePath>Projekt.xr.xml</PackagePath>
-      <Modified>2020-02-20T21:30:50.031</Modified>
+      <Modified>2020-02-21T09:55:01.561</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-02-20T21:31:04.772</Modified>
+      <Modified>2020-02-21T09:55:01.654</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\History.xbf">
       <PackagePath>History.xbf</PackagePath>
-      <Modified>2020-02-20T21:31:04.772</Modified>
+      <Modified>2020-02-21T09:55:01.654</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-02-20T21:31:04.773</Modified>
+      <Modified>2020-02-21T09:55:01.654</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -578,11 +602,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-02-20T20:20:10.430</Modified>
+      <Modified>2020-02-21T09:47:53.113</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ekrzkit\repo\IPM_Projekt\Projekt\bin\x86\Debug\Core\Projekt.exe">
       <PackagePath>Projekt.exe</PackagePath>
-      <Modified>2020-02-20T21:31:05.554</Modified>
+      <Modified>2020-02-21T09:55:03.171</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

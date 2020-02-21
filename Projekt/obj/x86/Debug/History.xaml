@@ -5,6 +5,7 @@
     xmlns:local="using:Projekt"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.TopAppBar>
@@ -15,10 +16,39 @@
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.TopAppBar>
-
-    <Grid>
-        <Button x:ConnectionId='4' Content="Go Back" Margin="0,114,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"                     />
-
-    </Grid>
+    <StackPanel>
+        <Grid x:ConnectionId='4'
+        x:Name="grid_panel_history_page" 
+        Margin="5,5,5,5" 
+        Background="AliceBlue"
+        Padding="5"
+        >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+            </Grid.RowDefinitions>
+            <CalendarDatePicker x:ConnectionId='7' Grid.Column ="0" Grid.Row="0" x:Name="hitoryDateStart" Header="Start date" />
+            <CalendarDatePicker x:ConnectionId='8' Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" />
+        </Grid>
+        <Grid x:ConnectionId='5'
+        x:Name="grid_panel_chart" 
+        Margin="5,5,5,5" 
+        Background="AliceBlue"
+        Padding="5"
+        >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Charting:Chart x:ConnectionId='6' Grid.Column ="0" Grid.Row="0" x:Name="LineChart" HorizontalAlignment="Center" Margin="5" Width="426">
+                <Charting:LineSeries Title="Chart Name" IndependentValuePath="months" DependentValuePath="countlent" />
+            </Charting:Chart>
+        </Grid>
+    </StackPanel>
 </Page>
 
