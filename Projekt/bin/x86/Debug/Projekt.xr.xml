@@ -45,6 +45,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button" />
     <RootType FullName="WinRTXamlToolkit.Controls.DataVisualization.Charting.Chart">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
@@ -58,6 +59,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
       <RootProperty Name="Header" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Date" />
     </RootType>
     <RootType FullName="Projekt.History" />

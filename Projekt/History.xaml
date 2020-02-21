@@ -20,7 +20,6 @@
         <Grid
         x:Name="grid_panel_history_page" 
         Margin="5,5,5,5" 
-        Background="AliceBlue"
         Padding="5"
         >
             <Grid.ColumnDefinitions>
@@ -30,13 +29,23 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"></RowDefinition>
             </Grid.RowDefinitions>
-            <CalendarDatePicker Grid.Column ="0" Grid.Row="0" x:Name="hitoryDateStart" Header="Start date" />
-            <CalendarDatePicker Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" />
+            <CalendarDatePicker Grid.Column ="0" Grid.Row="0" x:Name="hitoryDateStart" Header="Start date" HorizontalAlignment="Center" />
+            <CalendarDatePicker Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" HorizontalAlignment="Center" />
         </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button HorizontalAlignment="Center" Height="25" Width="75" AutomationProperties.Name="Download" Content="Download data" FontSize="8"/>
+
+        </Grid>
+
         <Grid
         x:Name="grid_panel_chart" 
         Margin="5,5,5,5" 
-        Background="AliceBlue"
         Padding="5"
         >
             <Grid.ColumnDefinitions>

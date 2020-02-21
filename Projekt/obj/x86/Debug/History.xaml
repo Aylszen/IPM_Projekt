@@ -30,8 +30,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"></RowDefinition>
             </Grid.RowDefinitions>
-            <CalendarDatePicker x:ConnectionId='7' Grid.Column ="0" Grid.Row="0" x:Name="hitoryDateStart" Header="Start date" />
-            <CalendarDatePicker x:ConnectionId='8' Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" />
+            <CalendarDatePicker x:ConnectionId='7' Grid.Column ="0" Grid.Row="0" x:Name="hitoryDateStart" Header="Start date" HorizontalAlignment="Center" />
+            <CalendarDatePicker x:ConnectionId='8' Grid.Column ="1" Grid.Row="0" x:Name="historyDateEnd" Header="End date" HorizontalAlignment="Center" />
         </Grid>
         <Grid x:ConnectionId='5'
         x:Name="grid_panel_chart" 
@@ -44,9 +44,11 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Charting:Chart x:ConnectionId='6' Grid.Column ="0" Grid.Row="0" x:Name="LineChart" HorizontalAlignment="Center" Margin="5" Width="426">
-                <Charting:LineSeries Title="Chart Name" IndependentValuePath="months" DependentValuePath="countlent" />
+            <Button Grid.Column ="0" Grid.Row="0"></Button>
+            <Charting:Chart x:ConnectionId='6' Grid.Column ="0" Grid.Row="1" x:Name="LineChart" HorizontalAlignment="Center" Margin="5" Width="426">
+                <Charting:LineSeries Title="Currency value" IndependentValuePath="months" DependentValuePath="countlent" />
             </Charting:Chart>
         </Grid>
     </StackPanel>
