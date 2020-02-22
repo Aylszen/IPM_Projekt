@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
-    
+    ManipulationMode="TranslateX,TranslateInertia,System" ManipulationDelta="SwipeablePage_ManipulationDelta" ManipulationCompleted="SwipeablePage_ManipulationCompleted"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.TopAppBar>
@@ -17,8 +17,8 @@
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.TopAppBar>
-    <StackPanel>
-        <Grid ManipulationMode="TranslateX,TranslateInertia,System" ManipulationDelta="SwipeablePage_ManipulationDelta" ManipulationCompleted="SwipeablePage_ManipulationCompleted"
+    <StackPanel> 
+        <Grid
         x:Name="grid_panel_history_page" 
         Margin="5,5,5,5" 
         Padding="5"
