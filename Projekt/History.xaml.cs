@@ -34,6 +34,7 @@ namespace Projekt
         public CurrentPageHandler currentPageHandler { get; set; }
         public HistoryDateViewModel historyDateViewModel { get; set; }
         HttpGet http;
+        private bool _isSwiped;
 
         public History()
         {
@@ -113,5 +114,35 @@ namespace Projekt
 
             ContentDialogResult result = await noWifiDialog.ShowAsync();
         }
+
+
+        private void SwipeablePage_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
+        {
+            if (e.IsInertial && !_isSwiped)
+            {
+                var swipedDistance = e.Cumulative.Translation.X;
+
+                if (Math.Abs(swipedDistance) <= 2) return;
+
+                if (swipedDistance > 0)
+                {
+                    Debug.WriteLine("Swapping: Right Swapped");
+                    Frame.Navigate(typeof(MainPage), null);
+                }
+                else
+                {
+                    Debug.WriteLine("Swapping: Left Swapped");
+                    //SwipeableTextBlock.Text = "Left Swiped";
+                }
+                _isSwiped = true;
+            }
+        }
+
+        private void SwipeablePage_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
+        {
+            _isSwiped = false;
+        }
+
+
     }
 }

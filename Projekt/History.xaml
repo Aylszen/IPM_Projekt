@@ -18,7 +18,7 @@
         </CommandBar>
     </Page.TopAppBar>
     <StackPanel>
-        <Grid
+        <Grid ManipulationMode="TranslateX,TranslateInertia,System" ManipulationDelta="SwipeablePage_ManipulationDelta" ManipulationCompleted="SwipeablePage_ManipulationCompleted"
         x:Name="grid_panel_history_page" 
         Margin="5,5,5,5" 
         Padding="5"

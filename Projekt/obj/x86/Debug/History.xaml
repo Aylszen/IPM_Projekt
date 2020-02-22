@@ -18,7 +18,7 @@
         </CommandBar>
     </Page.TopAppBar>
     <StackPanel>
-        <Grid x:ConnectionId='4'
+        <Grid x:ConnectionId='4' ManipulationMode="TranslateX,TranslateInertia,System"                                                                                                                
         x:Name="grid_panel_history_page" 
         Margin="5,5,5,5" 
         Padding="5"
